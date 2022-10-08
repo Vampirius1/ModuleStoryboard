@@ -8,12 +8,20 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet var header: UILabel!
+    @IBOutlet var button: UIButton!
+    var i = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setupHeader()
     }
-
-
+    @IBAction func buttonPressed(_ sender: Any) {
+        header.text = "Нажатий: \(i)"
+        i += 1
+    }
+    
+    func setupHeader () {
+        header.text = "Нажатий: 0"
+    }
 }
-
